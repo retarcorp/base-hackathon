@@ -16,7 +16,7 @@ export function Game(props) {
             const points = await getUserPoints();
             setPoints(points);
 
-            const userCards = await getUserCards();
+            const userCards = await getUserCards(); 
             setUserCards(userCards);
 
             const field = await getField();
