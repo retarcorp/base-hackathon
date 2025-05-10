@@ -1,0 +1,18 @@
+{
+    "accountAssociation": {
+      "header": "eyJmaWQiOjEwNzY4MzcsInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHhhQTVFMzEyODEzZDczMTQ0MTc5OTg3RmNGN0I0QkM2NzM1MzdGMjFmIn0",
+      "payload": "eyJkb21haW4iOiJiYXNlLWhhY2thdGhvbi1jYXJjYXNzb25lLnZlcmNlbC5hcHAifQ",
+      "signature": "MHgxZWQ2YWZlZWFjZGYwNTRiYmY1NWJmYjkxMTY1M2UxZGRlOGE3YTRjMGI3MjI1ZGEyYmI2ZmEzMzc3NDFlYWMzNWRkN2QyODhkN2YwNmNlY2QyNjIwNWNjYTM4ZDA0YzYzYTBjZjgyNWIzM2Q1MGJhYThkMjdiNGFhNTczZWEwZDFi"
+    },
+    "frame": {
+      "version": "1",
+      "name": "Example Frame",
+      "iconUrl": "https://base-hackathon-carcassone.vercel.app/icon.png",
+      "homeUrl": "https://base-hackathon-carcassone.vercel.app",
+      "imageUrl": "https://base-hackathon-carcassone.vercel.app/image.png",
+      "buttonTitle": "Check this out",
+      "splashImageUrl": "https://base-hackathon-carcassone.vercel.app/splash.png",
+      "splashBackgroundColor": "#eeccff",
+      "webhookUrl": "https://base-hackathon-carcassone.vercel.app/api/webhook"
+    }
+  }
