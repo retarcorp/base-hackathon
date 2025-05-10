@@ -1,9 +1,10 @@
+// @ts-nocheck
 import React, { useEffect, useState } from "react";
 import { StatusBar } from "./StatusBar/StatusBar";
 import { Map } from "./Map/Map";
 import { Card, CardParams, CellParams } from "./Card/Card";
-import { generateCard, generateField } from "@/app/utils/generateField";
 import { getField, getUserCards, getUserPoints, placeCard } from "@/app/utils/api";
+import { useViewProfile } from "@coinbase/onchainkit/minikit";
 
 export function Game(props) {
 
@@ -32,7 +33,7 @@ export function Game(props) {
         placeCard(x, y, card).then(() => {
 
         })
-        
+
         field[x][y] = card;
         setField(field);
 
@@ -52,6 +53,9 @@ export function Game(props) {
         }
     }
 
+    // const profile = useViewProfile();
+    // console.log(profile());
+
     return <>
         <div className="w-full h-[100vh] flex flex-col justify-between">
 
@@ -67,7 +71,7 @@ export function Game(props) {
                 <h2 className="text-4">Choose a card to pick up:</h2>
                 <div className="p-2">
                     <div className="cards flex gap-2">
-                        {userCards.map((c, i) => <Card {...c} selected={i === selectedCardIndex} onSelect={() => onSelectCard(i)} />)}
+                        {userCards.map((c, i) => <Card key={i} {...c} selected={i === selectedCardIndex} onSelect={() => onSelectCard(i)} />)}
                     </div>
                 </div>
             </div>

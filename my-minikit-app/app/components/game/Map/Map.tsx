@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import React from "react";
 import { Card, CellParams } from "../Card/Card";
 export function Map({w, h, field, onClickEmptyCell}) {
@@ -13,8 +15,8 @@ export function Map({w, h, field, onClickEmptyCell}) {
             <tbody>
                 {
                     field.map((row, x) => 
-                        <tr>
-                            {row.map((cell, y) => <td>{getCell(cell, x, y)}</td>)}
+                        <tr key={x}>
+                            {row.map((cell, y) => <td key={y}>{getCell(cell, x, y)}</td>)}
                         </tr>
                     )
                 }

@@ -1,5 +1,5 @@
 export async function GET() {
-  const URL = process.env.NEXT_PUBLIC_URL;
+  const URL = process.env.NEXT_PUBLIC_URL || 'https://base-hackathon-carcassone.vercel.app/';
 
   return Response.json({
     accountAssociation: {

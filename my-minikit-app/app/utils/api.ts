@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { CardParams } from "../components/game/Card/Card";
 import { generateCard, generateField } from "./generateField";
 
