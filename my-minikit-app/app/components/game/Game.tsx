@@ -5,6 +5,8 @@ import { Map } from "./Map/Map";
 import { Card, CardParams, CellParams } from "./Card/Card";
 import { getField, getUserCards, getUserPoints, placeCard } from "@/app/utils/api";
 import { useViewProfile } from "@coinbase/onchainkit/minikit";
+import { useAccount, useConnect, useEnsName, useReadContract, useT, useWriteContract } from "wagmi";
+import { wagmiContractConfig } from "@/app/wagmi/contracts";
 
 export function Game(props) {
 
@@ -55,6 +57,33 @@ export function Game(props) {
 
     // const profile = useViewProfile();
     // console.log(profile());
+
+    // const profile = useAccount();
+    // console.log(profile.address, profile.chain, profile.chainId, profile.addresses);
+
+    // profile.chain.blockExplorers
+    // useWriteContract({
+    // mutation: 
+    // })
+
+    const { connectors, connect } = useConnect()
+    // console.log(connectors, connect);
+
+    const { address } = useAccount()
+    const { data: ensName } = useEnsName({ address })
+
+    console.log(address, ensName);
+
+    const { isPending, data, isSuccess} = useReadContract({
+        ...wagmiContractConfig,
+        functionName: 'balanceOf',
+        args: ['0x03A71968491d55603FFe1b11A9e23eF013f75bCF'],
+    })
+
+    useEffect(() => {
+        console.log(data)
+    }, [isPending, isSuccess, data, address])
+
 
     return <>
         <div className="w-full h-[100vh] flex flex-col justify-between">
